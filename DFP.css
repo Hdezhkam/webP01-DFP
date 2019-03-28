@@ -69,7 +69,8 @@ header {
     background-size: cover;
 }
 
-header a.logo {
+header a.logo {                                          /* z-index- logo top of the nav*/
+    z-index: 1;
     position: absolute;
     display: block;
     width: 160px;
@@ -233,6 +234,102 @@ section.how-to blockquote p.credit::before {
     left: 0;
 }
 
+/* Navigation */                                   /* Navigation-position absolute from body */
+
+nav {
+    background-color: rgba(0, 0, 0, .55);
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 50px 0 0 0;
+    width: 100%;
+}
+nav::after {                                        /* Navigation clearfix */
+    content: '';
+    display: block;
+    clear: both;
+}
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0px;
+}
+
+nav ul li:hover {
+    background-color: rgba(230, 135, 63, 0.4);
+}
+nav ul li:hover > ul {
+    display: block;
+}
+nav ul li a {
+    display: inline-block;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    width: 125px;
+    position: relative;
+}
+nav ul li a:visited {
+    color: #fff;
+}
+nav ul li a:hover {
+    background-color:  rgba(214, 162, 122, .9);
+}
+nav ul li a:hover > ul {
+    display: block;
+}
+nav ul ul {
+    position: absolute;
+    top: 100%;
+    background-color: rgba(230, 135, 63, 0.5);
+    display: none;
+}
+nav ul ul li {
+    position: relative;
+}
+nav ul ul ul {
+    left: 100%;
+    top: 0px;
+}
+
+
+/* Navigation Top Level */                              /* importatnt command */
+
+nav > ul {
+    padding-left: 200px;
+}
+nav > ul > li {
+    float: left;
+}
+nav > ul > li > a {
+    width: auto;
+    padding: 10px 20px 15px 20px;
+}
+
+/* Navigation Top Level----Adding indication Arrow */
+
+nav a[aria-haspopup="true"]::after {                              /* Arrow sub level */
+    content: '';
+    display: block;
+    width: 0px;
+    height: 0px;
+    position: absolute;
+    top: 16px;
+    right: 15px;
+    border-top: 4px solid transparent;
+    border-bottom: 4px solid transparent;
+    border-left: 4px solid #fff;
+}
+nav > ul > li > a[aria-haspopup="true"]::after{                            /* Arrow top level */
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 4px solid #fff;
+    left: 20px;
+    right: auto;
+    bottom: 6px;
+    top: auto;
+}
+
 /* Footer */
 
 footer {
@@ -253,3 +350,20 @@ footer a:visited {
 footer a:hover {
     color: #000;
 }
+
+
+/* Media Queries */
+
+@media screen and (max-width: 1000px) {
+
+    h1 { font-size: 2.4em;}
+
+    /*header*/
+    header div.hero {left: 56%}
+    header div.hero h1 { margin-bottom: 20px;}
+
+    /*Section - Atmosphere*/
+    section.atmosphere article {padding-left: 450px; background-size: 375px auto;}
+}
+
+@media screen and (max-width: 825px) {
