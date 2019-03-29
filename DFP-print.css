@@ -32,8 +32,9 @@ a::after, a:visited::after {
 
 nav {display: none;}
 /*header { position: relative;}*/ /**/
-header a.btn {display: none;}
+header a {display: none;}
 header a.logo {display: none;}
+
 header::after { content: url(coverMain1000bw.jpg); width: 90%;}
 header a.logo { display: block; width: 145px; height: 60px; /*position: absolute;*/ top:20px; left:20px;}
 header a.logo::before { content: url(logo-print.jpg);}                         /*  */ 
@@ -56,7 +57,7 @@ section.atmosphere { position: relative; margin-bottom: 40px; padding-top: 50px;
 section.atmosphere::before { content: url(Aside01-BW.jpg)}
 section.atmosphere article { width: 40%; position: absolute; top: 40px; left: 425px;}
 
-section.how-to { padding-top: 50px; border-top: 1px solid #ccc;}
+section.how-to { padding-top: 50px; border-top: 1px solid #ccc; page-break-inside: avoid;} /*important*/
 section.how-to aside { width: 25%; float: left; margin: 0 35px 0 0;}
 section.how-to aside img {display: none;}
 section.how-to aside:nth-child(1) div.content::before { content: url(Aside01-BW.jpg)}
@@ -97,14 +98,12 @@ section.how-to blockquote p.credit::before {
     left: 0px;
     top: -1px;
 }
-footer { border-top: 1px solid #ccc; position: relative; min-height: 200px; padding: 20px 0 0 17px;}
-footer::before { content: url(frame.png); position: absolute; top: 20px; left: 0px;}
+footer { border-top: 1px solid #ccc; position: relative; min-height: 200px; padding: 20px 0 0 200px;}
+footer::before { content: url(qCode.jpg); position: absolute; top: 20px; left: 0px;}
 footer a { display: block; margin-top: 15px;}
 footer a::after {display: block;}
-footer div.content { padding-left: 300px;}
-footer div.content::after {
-    content: 'this page was printed from http://codifydesign.com';
-    display: block; margin-top: 30px; font-style: italic; font-size: .9em;
+
+
 }
 
 
